@@ -12,7 +12,7 @@ def print_intro():
     time.sleep(3)
     print('\n\n\n*** Press Enter To Continue ***\n\n\n')
     input()
-
+# 
 def enough_cards_in(deck):
     if len(deck) > 20:
         return True
