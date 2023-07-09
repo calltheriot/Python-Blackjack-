@@ -42,24 +42,24 @@ def card_sum(cards):
 def print_cards(hide_card=False):
     print('\n\n\n')
     if hide_card == True:
-        print('Dealer has [?] [' + str(dealer_cards[1]) + ']')
+        print(f'Dealer has [?] [{dealer_cards[1]}]')
         if dealer_cards[1] == 'A':
             print('    Dealer Total is: 11')
         else:
-            print('    Dealer Total is: ' + str(VALUES[dealer_cards[1]]))
+            print(f'    Dealer Total is: {VALUES[dealer_cards[1]]}')
         print('Player has', end='')
         for card in player_cards:
             print(' [' + str(card) + ']', end='')
-        print('\n    Player Total is: ' + str(card_sum(player_cards)))
+        print(f'\n    Player Total is: {card_sum(player_cards)}')
     else:
         print('Dealer has', end='')
         for card in dealer_cards:
-            print(' [' + str(card) + ']', end='')
-        print('\n    Dealer Total is: ' + str(card_sum(dealer_cards)))
+            print(f' [{card}]', end='')
+        print(f'\n    Dealer Total is: {card_sum(dealer_cards)}')
         print('Player has', end='')
         for card in player_cards:
-            print(' [' + str(card) + ']', end='')
-        print('\n    Player Total is: ' + str(card_sum(player_cards)))  
+            print(f' [{card}]', end='')
+        print(f'\n    Player Total is: {card_sum(player_cards)}')  
 
 def check_blackjack(cards):
     if ('A' in cards) and (card_sum(cards) == 21):
@@ -164,6 +164,7 @@ def determine_winner():
             time.sleep(2)
         elif card_sum(dealer_cards) == card_sum(player_cards):
             print('\n\n\n*** IT\'S A TIE ***\n\n\n')
+            time.sleep(2)
             
 def main():
     print_intro()
